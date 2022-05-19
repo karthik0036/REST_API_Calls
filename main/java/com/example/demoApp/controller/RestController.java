@@ -34,4 +34,12 @@ public class RestController {
 
 
 
+    //localhost:8080/hello/update/Mark/?lastName=Taylor
+    @PutMapping("/update/{firstName}")
+    public String sayHelloTaylor(@PathVariable String firstName,@RequestParam String lastName,User user){
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        return "Hello "+user.getFirstName() + " " +user.getLastName() +" !";
+    }
+
 }
