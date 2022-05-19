@@ -26,5 +26,12 @@ public class RestController {
         return "Hello " + name + " From Bridgelabz!!UC-3";
     }
 
+    //http://localhost:8080/hello/create-user" -w "\n
+    @PostMapping(value = {"/create-user","/post"})
+    public String sayHello(@RequestBody User user) {
+        return "Hello " + user.getFirstName() + " " + user.getLastName() + " From Bridgelabz";
+    }
+
+
 
 }
